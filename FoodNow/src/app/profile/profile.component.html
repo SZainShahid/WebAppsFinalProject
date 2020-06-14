@@ -1,0 +1,59 @@
+<nav style="background-color: whitesmoke;">
+  <div class="nav-wrapper">
+    <a class="brand-logo center" style="color: rgb(24, 23, 23);">
+      <i class="material-icons" style="font-size: 50px;">fastfood</i>
+      Food Now
+    </a>
+    <a class="left;" style="color: rgb(24, 23, 23);">
+      User Profile
+    </a>
+    <a class="left hide-on-med-and-down;" style="color: rgb(24, 23, 23);">
+      <i class="material-icons" style="font-size: 50px;">account_box</i>
+    </a>
+    <ul class="right hide-on-med-and-down;">
+      <li>
+        <a style="color: rgb(24, 23, 23);" routerLink="/home">Go Back Home</a>
+      </li>
+      <li *ngIf="userService.roleMatch(['Admin'])">
+        <a style="color: rgb(24, 23, 23);" routerLink="/adminPanel"
+          >Admin Panel</a
+        >
+      </li>
+      <li>
+        <a (click)="LogOut()" style="color: rgb(24, 23, 23);"
+          ><i class="material-icons">exit_to_app</i></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+<div class="row" *ngIf="userClaims">
+  <div class="col s12 m7">
+    <div class="card">
+      <div class="card-content">
+        <span>User Name: {{ userClaims.UserName }}</span>
+        <br />
+        <span>Email: {{ userClaims.Email }}</span>
+        <br />
+        <span>Phone Number: {{ userClaims.PhoneNumber }}</span>
+        <br />
+        <span>Address: {{ userClaims.Address }}</span>
+        <br />
+        <span>Logged On: {{ userClaims.LoggedOn }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- <div>
+  <ul class="left hide-on-med-and-down;">
+    <li>
+      <a
+        class="waves-effect waves-light btn"
+        style="color: rgb(24, 23, 23); background-color: whitesmoke;"
+        routerLink="/profileupdate"
+        (click)="populateForm(userClaims)"
+        >Update Profile</a
+      >
+    </li>
+  </ul>
+</div> -->

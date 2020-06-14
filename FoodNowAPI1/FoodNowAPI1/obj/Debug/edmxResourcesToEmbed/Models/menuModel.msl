@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="UserDBmenuModelStoreContainer" CdmEntityContainer="UserDBEntities1">
+    <EntitySetMapping Name="menus">
+      <EntityTypeMapping TypeName="UserDBmenuModel.menu">
+        <MappingFragment StoreEntitySet="menu">
+          <ScalarProperty Name="menuID" ColumnName="menuID" />
+          <ScalarProperty Name="restaurantID" ColumnName="restaurantID" />
+          <ScalarProperty Name="item" ColumnName="item" />
+          <ScalarProperty Name="itempic" ColumnName="itempic" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

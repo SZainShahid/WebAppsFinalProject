@@ -1,0 +1,142 @@
+<div class="row">
+  <div class="col m12">
+    <div class="card whitesmoke">
+      <div class="card-content white-text">
+        <span class="card-title" style="color: black;">Restaurant List</span>
+        <table class="higlight centered">
+          <tr>
+            <th style="color: dimgray;">Short Form</th>
+            <th style="color: dimgray;">Restaurant Name</th>
+            <th style="color: dimgray;">Address</th>
+            <th>
+              <button
+                class="btn-floating light-blue right"
+                style="color: rgb(24, 23, 23); background-color: whitesmoke;"
+                (click)="openDialog()"
+              >
+                <i class="material-icons">add</i>
+              </button>
+            </th>
+          </tr>
+          <tr *ngFor="let i of service.list">
+            <td style="color: black;">
+              {{ i.restaurantShortForm }}
+            </td>  
+            <td style="color: black;">{{ i.restaurantName }}</td>
+            <td style="color: black;">{{ i.Address }}</td>
+            <td style="color: black;">
+              <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                    Click here to edit
+                  </mat-panel-title>
+                  <mat-panel-description>
+                    <button
+                      class="btn-floating yellow darken-1"
+                      (click)="populateForm(i)"
+                    >
+                      <i class="material-icons">create</i>
+                    </button>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+                <div class="center-aligned">
+                  <div class="col m3"></div>
+                  <div class="col m6" style="width: 100%;">
+                    <div class="card whitesmoke">
+                      <div class="card-content white-text">
+                        <span class="card-title" style="color: black;"> </span>
+                        <form #form="ngForm" (submit)="onSubmit(form)">
+                          <input
+                            type="hidden"
+                            name="restaurantID"
+                            #restaurantID="ngModel"
+                            [(ngModel)]="service.formData.restaurantID"
+                          />
+                          <div class="form-group">
+                            <label>Restaurant Name</label>
+                            <input
+                              name="restaurantName"
+                              #restaurantName="ngModel"
+                              [(ngModel)]="service.formData.restaurantName"
+                              class="form-control"
+                              required
+                            />
+                            <div
+                              class="validation-error"
+                              *ngIf="
+                                restaurantName.invalid && restaurantName.touched
+                              "
+                            >
+                              Required Field!
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Short Form</label>
+                            <input
+                              name="restaurantShortForm"
+                              #restaurantShortForm="ngModel"
+                              [(ngModel)]="service.formData.restaurantShortForm"
+                              class="form-control"
+                              required
+                            />
+                            <div
+                              class="validation-error"
+                              *ngIf="
+                                restaurantShortForm.invalid &&
+                                restaurantShortForm.touched
+                              "
+                            >
+                              Required Field!
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label>Restaurant's Address</label>
+                            <input
+                              name="Address"
+                              #Address="ngModel"
+                              [(ngModel)]="service.formData.Address"
+                              class="form-control"
+                              required
+                            />
+                            <div
+                              class="validation-error"
+                              *ngIf="Address.invalid && Address.touched"
+                            >
+                              Required Field!
+                            </div>
+                          </div>
+                          <div class="center">
+                            <button
+                              type="submit"
+                              [disabled]="form.invalid"
+                              style="
+                                background-color: whitesmoke;
+                                color: black;
+                              "
+                              class="btn-large"
+                            >
+                              Submit
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col m3"></div>
+                </div>
+              </mat-expansion-panel>
+            </td>
+            <td style="color: black;">
+              <button
+                class="btn-floating red"
+                (click)="onDelete(i.restaurantID)"
+              >
+                <i class="material-icons">delete_forever</i>
+              </button>
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

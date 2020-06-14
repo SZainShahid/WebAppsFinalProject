@@ -1,0 +1,89 @@
+# See http://help.github.com/ignore-files/ for more about ignoring files.
+
+# compiled output
+/dist
+/tmp
+/out-tsc
+# Only exists if Bazel was run
+/bazel-out
+
+# dependencies
+/node_modules
+
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
+.DS_Store
+Thumbs.db
+src/index.html
+src/styles.css
+src/app/app.component.html
+src/app/app.module.ts
+src/app/routes.ts
+src/app/auth/auth.guard.spec.ts
+src/app/auth/auth.guard.ts
+src/app/auth/auth.interceptor.ts
+src/app/home/home.component.css
+src/app/home/home.component.html
+src/app/home/home.component.spec.ts
+src/app/home/home.component.ts
+src/app/shared/user.model.spec.ts
+src/app/shared/user.model.ts
+src/app/shared/user.service.spec.ts
+src/app/shared/user.service.ts
+src/app/user/user.component.css
+src/app/user/user.component.html
+src/app/user/user.component.spec.ts
+src/app/user/user.component.ts
+src/app/user/signin/signin.component.css
+src/app/user/signin/signin.component.html
+src/app/user/signin/signin.component.spec.ts
+src/app/user/signin/signin.component.ts
+src/app/user/signup/signup.component.css
+src/app/user/signup/signup.component.html
+src/app/user/signup/signup.component.spec.ts
+src/app/user/signup/signup.component.ts
+src/assets/images/background.jpeg
+src/assets/images/background1.jpg
+src/assets/images/foodnow logo red.png
+src/assets/images/foodnow ogo.png
+src/assets/images/foodnowlogo.png
+src/assets/images/foodnowlogo2.png
+src/assets/images/foodnowlogo3.png
+src/assets/images/foodnowlogo4.png
+src/assets/images/foodnowlogo11.png
+src/index.html
+src/styles.css
+src/app/app.component.html
+src/app/app.module.ts
+src/app/app.component.html
+angular.json

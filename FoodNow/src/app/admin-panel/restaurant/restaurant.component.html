@@ -1,0 +1,78 @@
+<div class="center-aligned">
+  <div class="col m3"></div>
+  <div class="col m6" style="width: 100%;">
+    <div class="card whitesmoke">
+      <div class="card-content white-text">
+        <span class="card-title" style="color: black;">
+        </span>
+        <form #form="ngForm" (submit)="onSubmit(form)">
+          <input
+            type="hidden"
+            name="restaurantID" 
+            #restaurantID="ngModel"
+            [(ngModel)]="service.formData.restaurantID"
+          />
+          <div class="form-group">
+            <label>Restaurant Name</label>
+            <input
+              name="restaurantName"
+              #restaurantName="ngModel"
+              [(ngModel)]="service.formData.restaurantName"
+              class="form-control"
+              required
+            />
+            <div
+              class="validation-error"
+              *ngIf="restaurantName.invalid && restaurantName.touched"
+            >
+              Required Field!
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Short Form</label>
+            <input
+              name="restaurantShortForm"
+              #restaurantShortForm="ngModel"
+              [(ngModel)]="service.formData.restaurantShortForm"
+              class="form-control"
+              required
+            />
+            <div
+              class="validation-error"
+              *ngIf="restaurantShortForm.invalid && restaurantShortForm.touched"
+            >
+              Required Field!
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Restaurant's Address</label>
+            <input
+              name="Address"
+              #Address="ngModel"
+              [(ngModel)]="service.formData.Address"
+              class="form-control"
+              required
+            />
+            <div
+              class="validation-error"
+              *ngIf="Address.invalid && Address.touched"
+            >
+              Required Field!
+            </div>
+          </div>
+          <div class="center">
+            <button
+              type="submit"
+              [disabled]="form.invalid"
+              style="background-color: whitesmoke; color: black;"
+              class="btn-large"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div> 
+    </div>
+  </div>
+  <div class="col m3"></div>
+</div>

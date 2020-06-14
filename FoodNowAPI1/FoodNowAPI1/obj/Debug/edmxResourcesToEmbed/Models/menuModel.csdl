@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="UserDBmenuModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="menu">
+    <Key>
+      <PropertyRef Name="menuID" />
+    </Key>
+    <Property Name="menuID" Type="Int32" Nullable="false" />
+    <Property Name="restaurantID" Type="Int32" Nullable="false" />
+    <Property Name="item" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="itempic" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityContainer Name="UserDBEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="menus" EntityType="Self.menu" />
+  </EntityContainer>
+</Schema>

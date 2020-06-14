@@ -1,0 +1,62 @@
+<div class="center-aligned">
+  <div class="col m3"></div>
+  <div class="col m6" style="width: 100%;">
+    <div class="card whitesmoke">
+      <div class="card-content white-text">
+        <span class="card-title" style="color: black;"> </span>
+        <form #form="ngForm" (submit)="onSubmit(form)">
+          <input
+            type="hidden"
+            name="menuID"
+            #menuID="ngModel"
+            [(ngModel)]="service.formMenuResData.menuID"
+          />
+          <div class="form-group">
+            <label>Restaurant ID</label>
+            <input
+              type="number"
+              name="restaurantID"
+              #restaurantID="ngModel"
+              [(ngModel)]="service.formMenuResData.restaurantID"
+              class="form-control"
+              required
+            />
+            <div
+              class="validation-error"
+              *ngIf="restaurantID.invalid && restaurantID.touched"
+            >
+              Required Field!
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Item</label>
+            <input
+              name="MenuItem"
+              #MenuItem="ngModel"
+              [(ngModel)]="service.formMenuResData.MenuItem"
+              class="form-control"
+              required
+            />
+            <div
+              class="validation-error"
+              *ngIf="MenuItem.invalid && MenuItem.touched"
+            >
+              Required Field!
+            </div>
+          </div>
+          <div class="center">
+            <button
+              type="submit"
+              [disabled]="form.invalid"
+              style="background-color: whitesmoke; color: black;"
+              class="btn-large"
+            >
+              Submit
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div class="col m3"></div>
+</div>

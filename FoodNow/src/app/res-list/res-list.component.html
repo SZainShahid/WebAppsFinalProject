@@ -1,0 +1,45 @@
+<!-- <table class="highlight centered">
+  <thead>
+    <mat-expansion-panel *ngFor="let i of service.list">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{i.restaurantName}}
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <p>{{i.restaurantID}}</p>
+    </mat-expansion-panel>
+  </thead>
+</table> -->
+
+<div class="m6 center-aligned">
+  <table class="highlight">
+    <mat-expansion-panel *ngFor="let i of service.list">
+      <mat-expansion-panel-header>
+        <mat-panel-title style="font-size: 20px">
+          <b>{{ i.restaurantName }}</b> <a style="color: white;">....</a> <p style="font-size: 15px; color: gray;"> {{ i.Address }} </p>
+        </mat-panel-title>
+        Click to Order
+      </mat-expansion-panel-header>
+      <div *ngFor="let j of service.MenuResList">
+        <div *ngIf="i.restaurantID == j.restaurantID">
+          <table class="highlight centered">
+            <tr>
+              <td style="font-size: 18.5px;">
+                      {{ j.MenuItem }}
+              </td>
+              <td>
+                <button
+                      class="btn-floating green right"
+                      style="color: rgb(24, 23, 23); background-color: whitesmoke;"
+                    >
+                      <i class="material-icons">add_shopping_cart </i>
+                    </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </table>
+</div>

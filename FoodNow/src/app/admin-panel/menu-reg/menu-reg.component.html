@@ -1,0 +1,48 @@
+<nav style="background-color: whitesmoke;">
+  <div class="nav-wrapper">
+    <a class="brand-logo center" style="color: rgb(24, 23, 23);">
+      <i class="material-icons" style="font-size: 50px;">fastfood</i>
+      Food Now
+    </a>
+    <a class="left;" style="color: rgb(24, 23, 23);">
+      Restaurant Edit
+    </a>
+    <a style="color: black;" class="left">
+      <i class="material-icons" style="font-size: 50px;">person_outline</i>
+    </a>
+    <ul class="right hide-on-med-and-down;">
+      <li>
+        <a style="color: rgb(24, 23, 23);" routerLink="/home">Go Back Home</a>
+      </li>
+      <li>
+        <a style="color: rgb(24, 23, 23);" routerLink="/profile"
+          >Visit Profile</a
+        >
+      </li>
+      <li>
+        <a style="color: rgb(24, 23, 23);" routerLink="/adminPanel"
+          >Admin Panel</a
+        >
+      </li>
+      <li>
+        <a (click)="LogOut()" style="color: rgb(24, 23, 23);"
+          ><i class="material-icons"> exit_to_app</i></a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="center-align">
+  <h1 class="display-4 text-center" style="color: rgb(24, 23, 23);">
+    <i class="material-icons" style="font-size: 60px;">restaurant</i>
+    Menu Register
+  </h1>
+  <hr />
+  <div class="row">
+    <div class="center">
+      <app-menu-list></app-menu-list>
+    </div>
+  </div>
+</div>
+<div><app-footer></app-footer></div>

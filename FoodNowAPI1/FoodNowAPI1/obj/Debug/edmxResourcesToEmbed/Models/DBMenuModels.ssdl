@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MenuDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="menu_items">
+    <Key>
+      <PropertyRef Name="menuID" />
+    </Key>
+    <Property Name="menuID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="restaurantID" Type="int" Nullable="false" />
+    <Property Name="item1" Type="nvarchar(max)" />
+    <Property Name="item2" Type="nvarchar(max)" />
+    <Property Name="item3" Type="nvarchar(max)" />
+    <Property Name="item4" Type="nvarchar(max)" />
+    <Property Name="item5" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityContainer Name="MenuDBModelStoreContainer">
+    <EntitySet Name="menu_items" EntityType="Self.menu_items" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
